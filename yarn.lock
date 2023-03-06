@@ -3900,6 +3900,7 @@ __metadata:
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     react-scripts: "npm:5.0.1"
+    sass: "npm:^1.58.3"
     web-vitals: "npm:^2.1.4"
   languageName: unknown
   linkType: soft
@@ -4228,7 +4229,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chokidar@npm:^3.4.2, chokidar@npm:^3.5.3":
+"chokidar@npm:>=3.0.0 <4.0.0, chokidar@npm:^3.4.2, chokidar@npm:^3.5.3":
   version: 3.5.3
   resolution: "chokidar@npm:3.5.3"
   dependencies:
@@ -6940,6 +6941,13 @@ __metadata:
   version: 9.0.19
   resolution: "immer@npm:9.0.19"
   checksum: 62cd5c8fc9fbed5652cd9220836aa295070c45069d9ee995537551c2f5d92d6970cf877e2cd78a166bbe66d1c1f4dc7c4d8e5d5b1dd926c7d8186d4390bce96b
+  languageName: node
+  linkType: hard
+
+"immutable@npm:^4.0.0":
+  version: 4.2.4
+  resolution: "immutable@npm:4.2.4"
+  checksum: 7b59910dfb18e5ca2c7b07d6a4394b5f83ecd3830139269c1c9f820649ae351da4810ff86b2f25d4618cb4e25f152246f5a00476dff37818dee81c7261de18c1
   languageName: node
   linkType: hard
 
@@ -11065,6 +11073,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"sass@npm:^1.58.3":
+  version: 1.58.3
+  resolution: "sass@npm:1.58.3"
+  dependencies:
+    chokidar: "npm:>=3.0.0 <4.0.0"
+    immutable: "npm:^4.0.0"
+    source-map-js: "npm:>=0.6.2 <2.0.0"
+  bin:
+    sass: sass.js
+  checksum: 050da7f5a507fb0f8892f86c92912ed028d441d7130ba30d488c635918391b5fdb83c45df6d84853a5d8344ede84546e734258eff3438beceabd73b81f31871b
+  languageName: node
+  linkType: hard
+
 "sax@npm:~1.2.4":
   version: 1.2.4
   resolution: "sax@npm:1.2.4"
@@ -11366,7 +11387,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"source-map-js@npm:^1.0.1, source-map-js@npm:^1.0.2":
+"source-map-js@npm:>=0.6.2 <2.0.0, source-map-js@npm:^1.0.1, source-map-js@npm:^1.0.2":
   version: 1.0.2
   resolution: "source-map-js@npm:1.0.2"
   checksum: 4496d29f371909dbc27dfb302f31cadc70b6f1591b2b433337daf923fac30e9632523e169494b40d06b53228166a577875a3610bce3412de8bb600152f748a9c
