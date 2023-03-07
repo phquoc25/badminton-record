@@ -11,11 +11,6 @@ body {
   position: relative;
 }
 
-#list-body {
-  max-height: 500px;
-  overflow-y: scroll;
-}
-
 .btn {
   border: 1px solid transparent;
   border-radius: 5px;

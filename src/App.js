@@ -1,6 +1,5 @@
 import './App.css';
-import './PlayerRow'
-import PlayerRow from './PlayerRow';
+import PlayerList from './player-list/PlayerList';
 
 function App() {
   const attendances = [
@@ -68,43 +67,39 @@ function App() {
       "presentOnThursday": true
     }
   ];
-  const attendancesList = attendances.map((attendance) => <PlayerRow player={attendance}></PlayerRow>);
   return (
     <div id="attendance-record">
-    <div class="header row-container">
-      <div class="name-panel">
+    <div className="header row-container">
+      <div className="name-panel">
         <label>NAME</label>
       </div>
-      <div class="check-opt">
+      <div className="check-opt">
         <label>TUESDAY</label>
-        <div id="tuesday-status-img" class="status-img unhappy"></div>
+        <div id="tuesday-status-img" className="status-img unhappy"></div>
       </div>
-      <div class="check-opt">
+      <div className="check-opt">
         <label>THURSDAY</label>
-        <div id="thursday-status-img" class="status-img unhappy"></div>
+        <div id="thursday-status-img" className="status-img unhappy"></div>
       </div>
     </div>
-
-    <div id="list-body">
-      {attendancesList}
-    </div>
-    <div class="list-footer">
-      <input class="name-input-panel" id="attendee-name" type="text" name="attendeeName"
+    <PlayerList players={attendances}></PlayerList>
+    <div className="list-footer">
+      <input className="name-input-panel" id="attendee-name" type="text" name="attendeeName"
              value="" placeholder="Enter name..."/>
 
       <div>
-        <div id="add-participant" class="btn btn-primary">
-          <img class="btn-icon" src="images/blue-plus-icon.png"/>
+        <div id="add-participant" className="btn btn-primary">
+          <img className="btn-icon" src="images/blue-plus-icon.png"/>
           <span>Add new participant</span>
         </div>
 
-        <div id="delete-participant" class="btn btn-danger">
-          <img class="btn-icon" src="images/delete-icon.png"/>
+        <div id="delete-participant" className="btn btn-danger">
+          <img className="btn-icon" src="images/delete-icon.png"/>
           <span>Delete</span>
         </div>
       </div>
-      <div id="save-participants" class="btn btn-success btn-save-attendee">
-        <img class="btn-icon" src="images/check-mark.png"/>
+      <div id="save-participants" className="btn btn-success btn-save-attendee">
+        <img className="btn-icon" src="images/check-mark.png"/>
         <span>Save and continue</span>
       </div>
     </div>
