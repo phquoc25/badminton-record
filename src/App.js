@@ -1,30 +1,31 @@
 import { useState } from 'react';
 import './App.css';
 import PlayerList from './player-list/PlayerList';
+import Header from './header/Header';
 
 function App() {
   const attendances = [
     {
       "id": 1560018929026,
-      "name": "Ho Quoc",
+      "name": "Quoc",
       "avatar": "images/avatar5.png",
       "isOn": true
     },
     {
       "id": 1560018929039,
-      "name": "Van Khanh",
+      "name": "Huy",
       "avatar": "images/avatar3.png",
       "isOn": true
     },
     {
       "id": 1560018929052,
-      "name": "Nicolas",
+      "name": "Truong",
       "avatar": "images/avatar4.png",
       "isOn": true
     },
     {
       "id": 1560018929064,
-      "name": "Dieu Vi",
+      "name": "Nguyen",
       "avatar": "images/avatar1.png",
       "isOn": false
     },
@@ -36,25 +37,19 @@ function App() {
     },
     {
       "id": 1560018929089,
-      "name": "Han Nhon",
+      "name": "Bac",
       "avatar": "images/avatar1.png",
       "isOn": true
     },
     {
       "id": 1560018929101,
-      "name": "Minh Quan",
+      "name": "Pierre",
       "avatar": "images/avatar3.png",
       "isOn": false
     },
     {
-      "id": 1560018929112,
-      "name": "Pierre",
-      "avatar": "images/avatar5.png",
-      "isOn": false
-    },
-    {
       "id": 1560018929124,
-      "name": "Tuan Anh",
+      "name": "Phuong",
       "avatar": "images/avatar4.png",
       "isOn": false
     }
@@ -64,21 +59,12 @@ function App() {
   function onAttendanceChanged(updatedPlayers) {
     setAttendancesList(updatedPlayers.sort(sortByName));
   }
+  function getNbOfPresent() {
+    return attendancesList.filter((player) => player.isOn).length;
+  }
   return (
     <div>
-      <div className="header row-container">
-        <div className="name-panel">
-          <label>NAME</label>
-        </div>
-        <div className="check-opt">
-          <label>TUESDAY</label>
-          <div id="tuesday-status-img" className="status-img unhappy"></div>
-        </div>
-        <div className="check-opt">
-          <label>THURSDAY</label>
-          <div id="thursday-status-img" className="status-img unhappy"></div>
-        </div>
-      </div>
+      <Header nbOfPresent={getNbOfPresent()}></Header>
       <PlayerList players={attendancesList} onChanged={onAttendanceChanged}></PlayerList>
     </div>
   );
