@@ -1,5 +1,5 @@
 import './PlayerList.scss';
-import PlayerRow from '../PlayerRow';
+import PlayerRow from '../player-row/PlayerRow';
 
 function PlayerList({ players }) {
     const attendancesList = players.map((player) => <PlayerRow key={player.name} player={player}></PlayerRow>);
